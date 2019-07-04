@@ -396,7 +396,8 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <hr>
-<h2 id="title：-spring笔记"><a href="#title：-spring笔记" class="headerlink" title="title： spring笔记"></a>title： spring笔记</h2><h1 id="1、spring原理"><a href="#1、spring原理" class="headerlink" title="1、spring原理"></a>1、spring原理</h1><p>​      内部最核心的就是<strong>IOC</strong>了，动态注入，让一个对象的创建不用new了，可以自动的生产，这其实就是利用java里的反射，反射其实就是在运行时动态的去创建、调用对象，Spring就是在运行时，跟xml Spring的配置文件来动态的创建对象，和调用对象里的方法的 。<br>      Spring还有一个核心就是<strong>AOP</strong>这个就是面向切面编程，可以为某一类对象 进行监督和控制（也就是 在调用这类对象的具体方法的前后去调用你指定的 模块）从而达到对一个模块扩充的功能。这些都是通过  配置类达到的。<br>      <strong>Spring目的</strong>：就是让对象与对象（模块与模块）之间的关系没有通过代码来关联，都是通过配置类说明管理的（Spring根据这些配置 内部通过反射去动态的组装对象）<br>      要记住：Spring是一个容器，凡是在容器里的对象才会有Spring所提供的这些服务和功能。<br>Spring里用的最经典的一个设计模式就是：模板方法模式。(这里我都不介绍了，是一个很常用的设计模式)， Spring里的配置是很多的，很难都记住，但是Spring里的精华也无非就是以上的两点，把以上两点跟理解了 也就基本上掌握了Spring.<br><strong>Spring AOP与IOC</strong><br><strong>一、 IoC(Inversion of control): 控制反转</strong><br>1、IoC：<br>概念：控制权由对象本身转向容器；由容器根据配置文件去创建实例并创建各个实例之间的依赖关系<br>核心：bean工厂；在Spring中，bean工厂创建的各个实例称作bean<br><strong>二、AOP(Aspect-Oriented Programming): 面向方面编程</strong><br>1、 代理的两种方式：<br>静态代理：<br> 针对每个具体类分别编写代理类；<br> 针对一个接口编写一个代理类；<br>动态代理：<br>针对一个方面编写一个InvocationHandler，然后借用JDK反射包中的Proxy类为各种接口动态生成相应的代理类</p>
+<h2 id="title：-spring笔记"><a href="#title：-spring笔记" class="headerlink" title="title： spring笔记"></a>title： spring笔记</h2><hr>
+<h1 id="1、spring原理"><a href="#1、spring原理" class="headerlink" title="1、spring原理"></a>1、spring原理</h1><p>​      内部最核心的就是<strong>IOC</strong>了，动态注入，让一个对象的创建不用new了，可以自动的生产，这其实就是利用java里的反射，反射其实就是在运行时动态的去创建、调用对象，Spring就是在运行时，跟xml Spring的配置文件来动态的创建对象，和调用对象里的方法的 。<br>      Spring还有一个核心就是<strong>AOP</strong>这个就是面向切面编程，可以为某一类对象 进行监督和控制（也就是 在调用这类对象的具体方法的前后去调用你指定的 模块）从而达到对一个模块扩充的功能。这些都是通过  配置类达到的。<br>      <strong>Spring目的</strong>：就是让对象与对象（模块与模块）之间的关系没有通过代码来关联，都是通过配置类说明管理的（Spring根据这些配置 内部通过反射去动态的组装对象）<br>      要记住：Spring是一个容器，凡是在容器里的对象才会有Spring所提供的这些服务和功能。<br>Spring里用的最经典的一个设计模式就是：模板方法模式。(这里我都不介绍了，是一个很常用的设计模式)， Spring里的配置是很多的，很难都记住，但是Spring里的精华也无非就是以上的两点，把以上两点跟理解了 也就基本上掌握了Spring.<br><strong>Spring AOP与IOC</strong><br><strong>一、 IoC(Inversion of control): 控制反转</strong><br>1、IoC：<br>概念：控制权由对象本身转向容器；由容器根据配置文件去创建实例并创建各个实例之间的依赖关系<br>核心：bean工厂；在Spring中，bean工厂创建的各个实例称作bean<br><strong>二、AOP(Aspect-Oriented Programming): 面向方面编程</strong><br>1、 代理的两种方式：<br>静态代理：<br> 针对每个具体类分别编写代理类；<br> 针对一个接口编写一个代理类；<br>动态代理：<br>针对一个方面编写一个InvocationHandler，然后借用JDK反射包中的Proxy类为各种接口动态生成相应的代理类</p>
 <h1 id="2、动态代理"><a href="#2、动态代理" class="headerlink" title="2、动态代理:"></a>2、动态代理:</h1><p>不用写代理类，虚拟机根据真实对象实现的接口产生一个类，通过类实例化一个动态代理，在实例化动态代理时将真实对象及装备注入到动态代理中，向客户端公开的是动态代理，当客户端调用动态代理方法时，动态代理根据类的反射得到真实对象的Method,调用装备的invoke方法，将动态代理、 Method、方法参数传与装备的invoke方法，invoke方法在唤起method方法前或后做一些处理。     </p>
 <p>​             1、产生动态代理的类:</p>
 <p>​                            java.lang.refect.Proxy</p>
@@ -436,7 +437,7 @@ height:50vh;
             <p>原文作者：<a href="http://yoursite.com"></a>
             <p>原文链接：<a href="http://yoursite.com/passages/spring笔记/1、spring原理/">http://yoursite.com/passages/spring笔记/1、spring原理/</a>
             <p>发表日期：<a href="http://yoursite.com/passages/spring笔记/1、spring原理/">July 4th 2019, 6:11:30 pm</a>
-            <p>更新日期：<a href="http://yoursite.com/passages/spring笔记/1、spring原理/">July 4th 2019, 6:58:49 pm</a>
+            <p>更新日期：<a href="http://yoursite.com/passages/spring笔记/1、spring原理/">July 4th 2019, 7:06:40 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -453,8 +454,8 @@ height:50vh;
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/passages/springboot笔记/了解springboot基础/" title= "">
-                    <div class="prevTitle">[Untitled Post]</div>
+                <a href= "/passages/springboot笔记/了解springboot基础/" title= "SpringBoot笔记">
+                    <div class="prevTitle">SpringBoot笔记</div>
                 </a>
             
         </li>
@@ -841,7 +842,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/passages/springboot笔记/了解springboot基础/" >[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/passages/springboot笔记/了解springboot基础/" >SpringBoot笔记</a>
         </li>
     
     
